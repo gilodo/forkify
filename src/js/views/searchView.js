@@ -16,7 +16,7 @@ export const highlightSelected = id => {                 // Step 202. Highlighti
     resultsArr.forEach(el => {                           // Step 206   
         el.classList.remove('results__link--active');    // Step 207   
     })  
-    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');    // Step 203
+    document.querySelector(`.results__link[href*="#${id}"]`).classList.add('results__link--active');    // Step 203; 320 ('results__link' is added)
 };
 
 /* How accumulator works
@@ -28,7 +28,7 @@ acc: 15 / acc + cur.length = 18 / newTitle = ['Pasta', 'with', 'tomato'] > 17 (s
 acc: 18 / acc + cur.length = 25 / newTitle = ['Pasta', 'with', 'tomato'] > 17 (see line 23)
 */
 
-const limitRecipeTitle = (title, limit = 17) => {        // Step 43 (limiting the title of each recipe down to 1 line)
+export const limitRecipeTitle = (title, limit = 17) => { // Step 43 (limiting the title of each recipe down to 1 line); 325 ('export' added)
     const newTitle = [];                                 // Step 49 (title of the recipe kept in 1 line)
     if(title.length > limit) {                           // Step 44
         title.split(' ').reduce((acc, cur) => {          // Step 46 (acc -accumulator (number of letters in recipe title), cur - current (number of letters in the current word))

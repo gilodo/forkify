@@ -36,7 +36,7 @@ const createIngredient = ingredient => `
     </li>
 `;
 
-export const renderRecipe = (recipe, isLiked) => {                                      // Step 175; 306 ('isLiked' added); 307 ${isLiked ? '' : '-outlined'} added
+export const renderRecipe = (recipe, isLiked) => {                                      // Step 175; 306 ('isLiked' and '${isLiked ? '' : '-outlined'}' added
                                                                                         // Step 176; 181 ('map' added); 
                                                                                         // 214 ('btn-decrease' and 'btn-increase' classes are added to servings buttons),
                                                                                         // 254 ("recipe__btn--add" class added)

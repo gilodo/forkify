@@ -5,7 +5,9 @@ export const elements = {                                                   // S
     searchResList: document.querySelector('.results__list'),                // Step 34. Results display list (left side of the page)
     searchResPages: document.querySelector('.results__pages'),              // Step 86. Pagination buttons wrapper
     recipe: document.querySelector('.recipe'),                              // Step 177. Single recipe
-    shopping: document.querySelector('.shopping__list')                     // Step 249. Shopping list
+    shopping: document.querySelector('.shopping__list'),                    // Step 249. Shopping list
+    likesMenu: document.querySelector('.likes__field'),                     // Step 311. Heart (right upper corner of the app)
+    likesList: document.querySelector('.likes__list')                       // Step 316. Likes list
 };
 
 export const elementStrings = {                                             // Step 61

@@ -92,11 +92,12 @@ const controlRecipe = async () => {                                             
             // Render recipe
             clearLoader();                                                      // Step 182
             recipeView.renderRecipe(                                            // Step 183    
-                state.recipe,                                                   // Step 308
-                state.likes.isLiked(id),                                        // Step 309
+                state.recipe,                                                   // Step 307
+                state.likes.isLiked(id),                                        // Step 308
                 );                                       
 
         } catch (err) {                                                         // Step 130
+            console.log(err);                                                   // Step 309
             alert('Error processing recipe!');                                  // Step 131
         }
         
@@ -144,6 +145,7 @@ elements.shopping.addEventListener('click', e => {                              
  */
 // TESTING
 state.likes = new Likes();
+likesView.toggleLikeMenu(state.likes.getNumLikes());
 
 const controlLike = () => {                                                     // Step 287
     if (!state.likes) state.likes = new Likes();                                // Step 288
@@ -161,18 +163,19 @@ const controlLike = () => {                                                     
         likesView.toggleLikeBtn(true);                                          // Step 304
         
         // Add like to UI list
-        console.log(state.likes);
+        likesView.renderLike(newLike);                                          // Step 323
 
     // User HAS liked current recipe
     } else {                                                                    // Step 291
         // Remove like from the state                                                  
         state.likes.deleteLike(currentID);                                      // Step 297
         // Toggle the like button
-        likesView.toggleLikeBtn(false);                                          // Step 305
+        likesView.toggleLikeBtn(false);                                         // Step 305
         // Remove like from UI list
-        console.log(state.likes);
-    }                                      
-}
+        likesView.deleteLike(currentID);                                        // Step 324
+    }
+    likesView.toggleLikeMenu(state.likes.getNumLikes());                        // Step 313
+};                                      
 
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {                                // Step 213
