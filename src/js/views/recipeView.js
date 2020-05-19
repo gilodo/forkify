@@ -36,7 +36,7 @@ const createIngredient = ingredient => `
     </li>
 `;
 
-export const renderRecipe = recipe => {                                                 // Step 175
+export const renderRecipe = (recipe, isLiked) => {                                      // Step 175; 306 ('isLiked' added); 307 ${isLiked ? '' : '-outlined'} added
                                                                                         // Step 176; 181 ('map' added); 
                                                                                         // 214 ('btn-decrease' and 'btn-increase' classes are added to servings buttons),
                                                                                         // 254 ("recipe__btn--add" class added)
@@ -79,7 +79,7 @@ export const renderRecipe = recipe => {                                         
             </div>
             <button class="recipe__love">
                 <svg class="header__likes">
-                    <use href="img/icons.svg#icon-heart-outlined"></use>
+                    <use href="img/icons.svg#icon-heart${isLiked ? '' : '-outlined'}"></use>
                 </svg>
             </button>
         </div>

@@ -1,7 +1,7 @@
 import { elements } from './base';                                                      // Step 245
 
-export const renderItem = item => {                                                     // Step 246
-                                                                                        // Step 248; 250 ('data-itemid' added and static data replaced by dynamic one and
+export const renderItem = item => {                                                     // Step 247
+                                                                                        // Step 248; 250 ('data-itemid=${item.id}' added and static data replaced by dynamic one and
                                                                                         // class="shopping__count-value" added to input)
     const markup = `
         <li class="shopping__item" data-itemid=${item.id}>
@@ -20,7 +20,7 @@ export const renderItem = item => {                                             
     elements.shopping.insertAdjacentHTML('beforeend', markup);                          // Step 251
 };
 
-export const deleteItem = id => {                                                       // Step 247
+export const deleteItem = id => {                                                       // Step 246
     const item = document.querySelector(`[data-itemid="${id}"]`);                       // Step 252
-    if (item) item.parentElement.removeChild(item);                                     // Step 253;  ('if (item)' added)
+    if (item) item.parentElement.removeChild(item);                                     // Step 253; 268 ('if (item)' added)
 };
